@@ -1,5 +1,5 @@
 {
-  "name": "react-native-option-select",
+  "name": "rn-option-select",
   "version": "0.0.1",
   "description": "Simple component to select multiple or a single option in a list",
   "main": "index.js",
