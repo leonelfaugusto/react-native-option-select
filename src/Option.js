@@ -30,17 +30,19 @@ const UnselectedOption = () => {
     />
   );
 }
+
 class Option extends Component {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     multiple: PropTypes.bool,
     selected: PropTypes.bool,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     selectedOption: PropTypes.element,
     unselectedOption: PropTypes.element,
     optionStyle: PropTypes.instanceOf(Object),
     disabled: PropTypes.bool,
   };
-  
+
   static defaultProps = {
     multiple: false,
     selectedOption: React.createElement(SelectedOption),
@@ -76,16 +78,20 @@ class Option extends Component {
         disabled={(active && !multiple) || disabled}
       >
         <View style={{ ...optionStyle.container, flexDirection: 'row', alignItems: 'center' }}>
-          <Text
-            style={{
-              ...optionStyle.text,
-              lineHeight: 40,
-              fontSize: 16,
-              flex: 1,
-            }}
-          >
-            {title}
-          </Text>
+          {typeof title === 'string' &&
+            <Text
+              style={{
+                ...optionStyle.text,
+                lineHeight: 40,
+                fontSize: 16,
+              }}
+            >
+              {title}
+            </Text>
+          }
+          {typeof title === 'object' &&
+            title
+          }
           <View style={{ flex: 1, alignItems: 'flex-end' }}>
             {active ? selectedOption : unselectedOption}
           </View>
