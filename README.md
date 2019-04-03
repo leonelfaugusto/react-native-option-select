@@ -68,7 +68,7 @@ render () {
 | ------------------------------ | ---------------- | --------------------------------------------- | ----------------------------------------------- |
 | options                        | array            | **REQUIRED**                                  | Array of values objects [more](#options-array)  |
 | multiple                       | bool             | false                                         | Select multiple values                          |
-| onOptionPress                  | func             | ( ) => null                                   | Called when option is pressed (`values` as arg) [more](#onoptionspress) |
+| onOptionPress                  | func             | ( ) => null                                   | Called when option is pressed (`values` as arg) [more](#onoptionpress) |
 | disabled                       | bool             | false                                         | Disable select                                  |
 | unselectedOption               | React.element    | A circular `View` with a border               | Override element for unselected options         |
 | selectedOption                 | React.element    | A circular `View` with backgroundColor: 'blue'| Override element for selected options           |
