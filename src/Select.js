@@ -5,24 +5,23 @@ import Option from './Option';
 
 class Select extends Component {
   static propTypes = {
-    containerStyle: PropTypes.instanceOf(Object),
+    options: PropTypes.instanceOf(Array).isRequired,
     multiple: PropTypes.bool,
-    options: PropTypes.instanceOf(Array),
     onOptionPress: PropTypes.func,
+    disabled: PropTypes.bool,
     unselectedOption: PropTypes.element,
     selectedOption: PropTypes.element,
     optionStyle: PropTypes.instanceOf(Object),
-    disabled: PropTypes.bool,
+    containerStyle: PropTypes.instanceOf(Object),
   };
   
   static defaultProps = {
-    containerStyle: undefined,
+    containerStyle: {},
     multiple: false,
-    options: undefined,
-    onOptionPress: undefined,
+    onOptionPress: () => null,
     unselectedOption: undefined,
     selectedOption: undefined,
-    optionStyle: undefined,
+    optionStyle: {},
     disabled: false,
   };
 
