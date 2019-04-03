@@ -8,13 +8,12 @@ An simple and customizable react-native select.
 - Single / multiple choices
 - Customizable styles
 
-## Demo
-WIP
+## Demos
 
-<!-- <p align="center">
-<img src="https://raw.githubusercontent.com/mmazzarolo/react-native-tips/master/imgs/modal.gif" height="300" />
-<img src="https://raw.githubusercontent.com/mmazzarolo/react-native-modal-datetime-picker/master/extras/datetimepicker-ios.gif" height="300" />
-<img src="https://raw.githubusercontent.com/mmazzarolo/react-native-modal/master/.github/example-modal.gif" height="300" /> -->
+<p align="center">
+<img src="https://raw.githubusercontent.com/leonelfaugusto/rn-option-select/master/examples/gifs/simulator.gif" height="400" />
+<img src="https://raw.githubusercontent.com/leonelfaugusto/rn-option-select/master/examples/gifs/simulator2.gif" height="400" />
+<img src="https://raw.githubusercontent.com/leonelfaugusto/rn-option-select/master/examples/gifs/simulator3.gif" height="400" />
 </p>
 
 ## Setup
