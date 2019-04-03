@@ -10,3 +10,7 @@ dist
 
 # Dependency directory
 node_modules
+
+# Others
+.vscode
+rn-option-select-*

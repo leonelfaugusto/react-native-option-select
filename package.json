@@ -1,6 +1,6 @@
 {
   "name": "rn-option-select",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple component to select multiple or a single option in a list",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonelfaugusto/react-native-option-select.git"
+    "url": "git+https://github.com/leonelfaugusto/rn-option-select.git"
   },
   "keywords": [
     "react-native",
@@ -27,11 +27,11 @@
   "author": "Leonel Augusto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leonelfaugusto/react-native-option-select/issues"
+    "url": "https://github.com/leonelfaugusto/rn-option-select/issues"
   },
-  "homepage": "https://github.com/leonelfaugusto/react-native-option-select#readme",
+  "homepage": "https://github.com/leonelfaugusto/rn-option-select#readme",
   "dependencies": {
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.53.1"

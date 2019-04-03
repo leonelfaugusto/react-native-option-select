@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Select } from 'react-native-option-select';
+import { Select } from 'rn-option-select';
 
 export default class App extends Component {
   render() {
@@ -22,14 +22,23 @@ export default class App extends Component {
             container: {
               borderBottomWidth: 1,
               borderColor: 'rgb(191, 191, 191)',
-              marginRight: -16,
-              paddingRight: 20,
             },
           }}
           options={[
-            { title: "Title 1", value: 'title1', selected: true },
-            { title: "Title 2", value: 'title2' },
-            { title: "Title 3", value: 'title3' },
+            {
+              title: "Title 1",
+              value: 'title1',
+            },
+            {
+              title: "Title 2",
+              value: 'title2',
+              selected: true
+            },
+            {
+              title:
+              "Title 3",
+              value: 'title3'
+            },
           ]}
         />
       </View>

@@ -9,7 +9,8 @@ class Select extends Component {
     multiple: PropTypes.bool,
     options: PropTypes.instanceOf(Array),
     onOptionPress: PropTypes.func,
-    optionIcon: PropTypes.instanceOf(Object),
+    unselectedOption: PropTypes.element,
+    selectedOption: PropTypes.element,
     optionStyle: PropTypes.instanceOf(Object),
     disabled: PropTypes.bool,
   };
@@ -19,17 +20,16 @@ class Select extends Component {
     multiple: false,
     options: undefined,
     onOptionPress: undefined,
-    optionIcon: undefined,
+    unselectedOption: undefined,
+    selectedOption: undefined,
     optionStyle: undefined,
     disabled: false,
   };
 
-  childs = [];
-
   constructor(props) {
     super(props);
-    const { options, multiple, optionIcon, optionStyle, disabled } = props;
-    options.map(child => {
+    const { options, multiple, optionStyle, disabled, selectedOption, unselectedOption } = props;
+    this.childs = options.map(child => {
       const newProps = [];
       newProps.multiple = multiple;
       newProps.onChange = this.onChange;
@@ -38,22 +38,22 @@ class Select extends Component {
       newProps.value = child.value;
       newProps.selected = child.selected;
       newProps.ref = React.createRef();
-      newProps.optionIcon = optionIcon;
+      newProps.selectedOption = selectedOption;
+      newProps.unselectedOption = unselectedOption;
       newProps.optionStyle = optionStyle;
       newProps.disabled = disabled;
-      this.childs.push(React.createElement(Option, newProps));
-      return null;
+      return React.createElement(Option, newProps);
     });
   }
 
   onChange = option => {
     const { options, multiple, onOptionPress } = this.props;
-    const activedOptions = options;
+    const activatedOptions = options;
     if (multiple) {
-      option.optionToogle(!option.state.active);
+      option.optionToggle(!option.state.active);
       this.childs.map((child, index) => {
         if (option.props.value === child.ref.current.props.value) {
-          activedOptions[index] = {
+          activatedOptions[index] = {
             selected: !option.state.active,
             title: child.props.title,
             value: child.props.value,
@@ -64,15 +64,15 @@ class Select extends Component {
     } else {
       this.childs.map((child, index) => {
         if (option.props.value === child.ref.current.props.value) {
-          child.ref.current.optionToogle(!option.state.active);
-          activedOptions[index] = {
+          child.ref.current.optionToggle(!option.state.active);
+          activatedOptions[index] = {
             selected: !option.state.active,
             title: child.props.title,
             value: child.props.value,
           };
         } else {
-          child.ref.current.optionToogle(option.state.active);
-          activedOptions[index] = {
+          child.ref.current.optionToggle(option.state.active);
+          activatedOptions[index] = {
             selected: option.state.active,
             title: child.props.title,
             value: child.props.value,
@@ -82,7 +82,7 @@ class Select extends Component {
       });
     }
 
-    onOptionPress(activedOptions);
+    onOptionPress(activatedOptions);
   };
 
   render() {
