@@ -3,6 +3,24 @@ import { TouchableWithoutFeedback, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 class Option extends Component {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    multiple: PropTypes.bool,
+    selected: PropTypes.bool,
+    title: PropTypes.string.isRequired,
+    optionIcon: PropTypes.instanceOf(Object),
+    optionStyle: PropTypes.instanceOf(Object),
+    disabled: PropTypes.bool,
+  };
+  
+  static defaultProps = {
+    multiple: false,
+    optionIcon: undefined,
+    selected: false,
+    optionStyle: false,
+    disabled: false,
+  };
+
   constructor(props) {
     super(props);
     const { selected } = props;
@@ -68,23 +86,5 @@ class Option extends Component {
     );
   }
 }
-
-Option.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  multiple: PropTypes.bool,
-  selected: PropTypes.bool,
-  title: PropTypes.string.isRequired,
-  optionIcon: PropTypes.instanceOf(Object),
-  optionStyle: PropTypes.instanceOf(Object),
-  disabled: PropTypes.bool,
-};
-
-Option.defaultProps = {
-  multiple: false,
-  optionIcon: undefined,
-  selected: false,
-  optionStyle: false,
-  disabled: false,
-};
 
 export default Option;
