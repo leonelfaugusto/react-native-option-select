@@ -24,12 +24,10 @@ class Select extends Component {
     disabled: false,
   };
 
-  childs = [];
-
   constructor(props) {
     super(props);
     const { options, multiple, optionIcon, optionStyle, disabled } = props;
-    options.map(child => {
+    this.childs = options.map(child => {
       const newProps = [];
       newProps.multiple = multiple;
       newProps.onChange = this.onChange;
@@ -41,19 +39,18 @@ class Select extends Component {
       newProps.optionIcon = optionIcon;
       newProps.optionStyle = optionStyle;
       newProps.disabled = disabled;
-      this.childs.push(React.createElement(Option, newProps));
-      return null;
+      return React.createElement(Option, newProps);
     });
   }
 
   onChange = option => {
     const { options, multiple, onOptionPress } = this.props;
-    const activedOptions = options;
+    const activatedOptions = options;
     if (multiple) {
-      option.optionToogle(!option.state.active);
+      option.optionToggle(!option.state.active);
       this.childs.map((child, index) => {
         if (option.props.value === child.ref.current.props.value) {
-          activedOptions[index] = {
+          activatedOptions[index] = {
             selected: !option.state.active,
             title: child.props.title,
             value: child.props.value,
@@ -64,15 +61,15 @@ class Select extends Component {
     } else {
       this.childs.map((child, index) => {
         if (option.props.value === child.ref.current.props.value) {
-          child.ref.current.optionToogle(!option.state.active);
-          activedOptions[index] = {
+          child.ref.current.optionToggle(!option.state.active);
+          activatedOptions[index] = {
             selected: !option.state.active,
             title: child.props.title,
             value: child.props.value,
           };
         } else {
-          child.ref.current.optionToogle(option.state.active);
-          activedOptions[index] = {
+          child.ref.current.optionToggle(option.state.active);
+          activatedOptions[index] = {
             selected: option.state.active,
             title: child.props.title,
             value: child.props.value,
@@ -82,7 +79,7 @@ class Select extends Component {
       });
     }
 
-    onOptionPress(activedOptions);
+    onOptionPress(activatedOptions);
   };
 
   render() {

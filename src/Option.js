@@ -16,7 +16,7 @@ class Option extends Component {
     onChange(this);
   };
 
-  optionToogle = state => {
+  optionToggle = state => {
     this.setState({ active: state });
   };
 
