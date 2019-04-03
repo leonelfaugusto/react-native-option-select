@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Select } from 'react-native-option-select';
+import { Select } from 'rn-option-select';
 
 export default class App extends Component {
   render() {
