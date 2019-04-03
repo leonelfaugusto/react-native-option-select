@@ -9,7 +9,8 @@ class Select extends Component {
     multiple: PropTypes.bool,
     options: PropTypes.instanceOf(Array),
     onOptionPress: PropTypes.func,
-    optionIcon: PropTypes.instanceOf(Object),
+    unselectedOption: PropTypes.element,
+    selectedOption: PropTypes.element,
     optionStyle: PropTypes.instanceOf(Object),
     disabled: PropTypes.bool,
   };
@@ -19,14 +20,15 @@ class Select extends Component {
     multiple: false,
     options: undefined,
     onOptionPress: undefined,
-    optionIcon: undefined,
+    unselectedOption: undefined,
+    selectedOption: undefined,
     optionStyle: undefined,
     disabled: false,
   };
 
   constructor(props) {
     super(props);
-    const { options, multiple, optionIcon, optionStyle, disabled } = props;
+    const { options, multiple, optionStyle, disabled, selectedOption, unselectedOption } = props;
     this.childs = options.map(child => {
       const newProps = [];
       newProps.multiple = multiple;
@@ -36,7 +38,8 @@ class Select extends Component {
       newProps.value = child.value;
       newProps.selected = child.selected;
       newProps.ref = React.createRef();
-      newProps.optionIcon = optionIcon;
+      newProps.selectedOption = selectedOption;
+      newProps.unselectedOption = unselectedOption;
       newProps.optionStyle = optionStyle;
       newProps.disabled = disabled;
       return React.createElement(Option, newProps);
