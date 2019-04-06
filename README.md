@@ -1,5 +1,5 @@
 # rn-option-select
-[![npm version](https://badge.fury.io/js/rn-option-select.svg)](https://badge.fury.io/js/rn-option-select) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![npm version](https://badge.fury.io/js/rn-option-select.svg)](https://badge.fury.io/js/rn-option-select) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![dependencies Status](https://david-dm.org/leonelfaugusto/rn-option-select/status.svg)](https://david-dm.org/leonelfaugusto/rn-option-select) [![devDependencies Status](https://david-dm.org/leonelfaugusto/rn-option-select/dev-status.svg)](https://david-dm.org/leonelfaugusto/rn-option-select?type=dev)
 
 An simple and customizable react-native select.
 
